@@ -1,0 +1,96 @@
+/* Reset & base */
+* {box-sizing:border-box;margin:0;padding:0}
+html,body {height:100%}
+body {font-family:Inter, Arial, sans-serif; background:#f7f8f6; color:#213; line-height:1.4}
+
+/* NAV */
+.navbar {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px; background:#1f7a59; color:#fff; position:sticky; top:0; z-index:50;
+}
+.navbar .logo {font-weight:700; letter-spacing:0.6px}
+.nav-links {list-style:none; display:flex; gap:14px}
+.nav-links a {color:#fff; text-decoration:none; font-weight:500}
+
+/* HERO */
+.hero {
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:44px 20px; background:linear-gradient(90deg,#1f7a59 0%, #61b27d 100%);
+  color:#fff;
+}
+.hero-content {max-width:980px}
+.hero h1 {font-size:28px; margin-bottom:8px}
+.hero p {opacity:0.95; margin-bottom:14px}
+
+/* 카테고리 버튼 */
+.categories {display:flex; gap:10px; justify-content:center; padding:14px 12px; background:#eff8f2}
+.cat-btn {
+  background:#fff; border:1px solid #cfebe0; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:600;
+}
+.cat-btn:hover {background:#f1fff4}
+
+/* 중앙 컨테이너 to limit width */
+.container {max-width:1200px; margin:28px auto; padding:0 18px}
+
+/* PRODUCT GRID: 핵심
+   - auto-fit + minmax -> 여러 열로 자동 배치
+   - gap으로 충분히 떨어뜨려 일렬 느낌 제거
+*/
+.product-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:18px;
+  align-items:start;
+}
+
+/* product card (icon + text) */
+.product {
+  background:#fff;
+  border-radius:12px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(19,28,22,0.06);
+  transition:transform .18s ease, box-shadow .18s ease;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height:140px; /* 균일한 카드 높이 */
+}
+.product:hover { transform:translateY(-6px); box-shadow:0 12px 30px rgba(19,28,22,0.09); }
+
+/* icon placeholder (no images) */
+.product .icon {
+  width:56px; height:56px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center; font-size:24px;
+  background:linear-gradient(180deg,#eaf6ee,#fff); color:#1f7a59;
+  box-shadow: inset 0 -6px 12px rgba(31,122,89,0.04);
+}
+
+/* product title/price/desc layout */
+.product h2 {font-size:16px; margin:0; font-weight:700}
+.product .price {font-weight:700; color:#1f7a59}
+.product .desc {color:#556; font-size:13px}
+
+/* CTA inside card */
+.card-actions {margin-top:auto; display:flex; gap:10px; align-items:center}
+button.small {padding:8px 12px; border-radius:8px; border:1px solid #cfebe0; background:#fff; cursor:pointer}
+button.primary {background:#1f7a59; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer}
+
+/* page blocks e.g. product-detail / panels centered */
+.product-detail, .checkout-panel, .payment-panel, .success-panel {
+  max-width:720px; margin:24px auto; padding:20px; background:#fff; border-radius:12px;
+  box-shadow:0 8px 22px rgba(19,28,22,0.05);
+}
+
+/* Back to top */
+#back-top {position:fixed; right:20px; bottom:24px; width:44px; height:44px; border-radius:8px; border:none; background:#1f7a59; color:#fff; display:none; cursor:pointer}
+
+/* responsive tweaks */
+@media (max-width:900px){
+  .hero h1 {font-size:22px}
+  .product-grid {gap:12px}
+}
+@media (max-width:520px){
+  .nav-links {display:none}
+  .hero {padding:28px 12px}
+  .product {padding:14px}
+}

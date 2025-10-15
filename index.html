@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EcoLife Shop</title>
+<link rel="stylesheet" href="style.css" />
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">EcoLife</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">Cart 🛒</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <h1>Eco Life</h1>
+    <p>부제목</p>
+    <button class="primary" onclick="scrollToProducts()">Shop Now</button>
+  </div>
+</header>
+
+<section class="categories">
+  <button onclick="filterCategory('all')" class="cat-btn">전체</button>
+  <button onclick="filterCategory('tumbler')" class="cat-btn">텀블러</button>
+  <button onclick="filterCategory('bag')" class="cat-btn">가방</button>
+  <button onclick="filterCategory('home')" class="cat-btn">생활용품</button>
+</section>
+
+<!-- 상품 격자 (절대 일렬이 되지 않음) -->
+<main class="container">
+  <section class="product-grid" id="product-grid" aria-live="polite"></section>
+</main>
+
+<button id="back-top" onclick="scrollToTop()" title="Back to top">↑</button>
+
+<footer>
+  <p>© 2025 EcoLife Shop</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="hero small">
+  <h1>Payment</h1>
+</header>
+
+<main class="page-wrap">
+<section class="payment-panel">
+  <h2>Payment Details</h2>
+  <p id="pay-item" class="muted">Loading...</p>
+
+  <form id="payment-form">
+    <label>Card Holder</label>
+    <input type="text" id="card-name" placeholder="Full Name" required>
+
+    <label>Card Number</label>
+    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+
+    <div class="row">
+      <div>
+        <label>Expiry</label>
+        <input type="text" id="card-exp" placeholder="MM/YY" maxlength="5" required>
+      </div>
+      <div>
+        <label>CVV</label>
+        <input type="text" id="card-cvv" placeholder="123" maxlength="4" required>
+      </div>
+    </div>
+
+    <label>Email</label>
+    <input type="email" id="bill-email" placeholder="you@example.com" required>
+
+    <div class="actions">
+      <button type="button" id="back-to-checkout" class="ghost">← Back to Checkout</button>
+      <button type="submit" class="primary">Pay Now</button>
+    </div>
+  </form>
+</section>
+</main>
+
+</body>
+</html>
